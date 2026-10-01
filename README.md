@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="screenshots/graphite.png" alt="Skin Clock" width="500">
+</p>
+
 # Skin Clock
 
 A movable analog clock for GNOME Shell with selectable skins and configurable appearance.
@@ -15,6 +19,7 @@ A movable analog clock for GNOME Shell with selectable skins and configurable ap
 - Show/hide from the GNOME top panel
 - Reset position from the panel menu
 - Right-click the clock to open preferences
+
 
 ## Built-in skins
 
