@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="screenshots/graphite.png" alt="Skin Clock" width="500">
+  <img src="logoARclock.png" alt="Skin Clock" width="500">
 </p>
 
 # Skin Clock
