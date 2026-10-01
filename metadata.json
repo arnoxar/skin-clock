@@ -2,7 +2,7 @@
   "uuid": "skin-clock@arnoxar-du-24",
   "name": "Skin Clock",
   "description": "A movable analog desktop clock with selectable skins, size and opacity controls, and a panel menu to show or hide it.",
-  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "shell-version": ["46"],
   "settings-schema": "org.gnome.shell.extensions.skin-clock",
   "url": "https://github.com/arnoxar/skin-clock"
 }
