@@ -1,0 +1,74 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Generated with AI for personal use.
+// Do NOT upload to extensions.gnome.org (EGO) unless you understand JavaScript
+// and can maintain this code.
+
+export const SKINS = Object.freeze({
+    classic: {
+        label: 'Classic',
+        face: '#f2ead7',
+        faceAlpha: 0.92,
+        rim: '#222222',
+        tick: '#222222',
+        hour: '#181818',
+        minute: '#181818',
+        second: '#b3261e',
+        hub: '#222222',
+        text: '#222222',
+        numbers: 'arabic',
+    },
+    railway: {
+        label: 'Railway',
+        face: '#ffffff',
+        faceAlpha: 0.96,
+        rim: '#111111',
+        tick: '#111111',
+        hour: '#111111',
+        minute: '#111111',
+        second: '#d40000',
+        hub: '#d40000',
+        text: '#111111',
+        numbers: 'none',
+    },
+    minimal: {
+        label: 'Minimal',
+        face: '#ffffff',
+        faceAlpha: 0.10,
+        rim: '#ffffff',
+        tick: '#ffffff',
+        hour: '#ffffff',
+        minute: '#ffffff',
+        second: '#ff5f57',
+        hub: '#ffffff',
+        text: '#ffffff',
+        numbers: 'none',
+    },
+    neon: {
+        label: 'Neon',
+        face: '#0b1020',
+        faceAlpha: 0.88,
+        rim: '#22d3ee',
+        tick: '#67e8f9',
+        hour: '#f0f9ff',
+        minute: '#22d3ee',
+        second: '#fb7185',
+        hub: '#f0f9ff',
+        text: '#67e8f9',
+        numbers: 'arabic',
+    },
+    graphite: {
+        label: 'Graphite',
+        face: '#171717',
+        faceAlpha: 0.94,
+        rim: '#a3a3a3',
+        tick: '#d4d4d4',
+        hour: '#f5f5f5',
+        minute: '#d4d4d4',
+        second: '#eab308',
+        hub: '#eab308',
+        text: '#e5e5e5',
+        numbers: 'arabic',
+    },
+});
+
+export const SKIN_IDS = Object.freeze(Object.keys(SKINS));
