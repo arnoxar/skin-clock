@@ -35,5 +35,10 @@
       <default>100</default>
       <summary>Vertical position</summary>
     </key>
+	<key name="refresh-ms" type="i">
+		  <range min="16" max="1000"/>
+		  <default>50</default>
+		  <summary>Clock refresh interval in milliseconds</summary>
+		</key>
   </schema>
 </schemalist>

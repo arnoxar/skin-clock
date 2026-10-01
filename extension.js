@@ -54,9 +54,19 @@ const ClockActor = GObject.registerClass(class ClockActor extends St.DrawingArea
         this._signalIds.push(this.connect('motion-event', (_actor, event) => this._onMotion(event)));
         this._signalIds.push(this.connect('scroll-event', (_actor, event) => this._onScroll(event)));
 
-        for (const key of ['skin', 'size', 'opacity', 'show-seconds', 'smooth-seconds', 'visible']) {
-            this._settingsIds.push(this._settings.connect(`changed::${key}`, () => this._applySettings()));
-        }
+		for (const key of [
+			'skin',
+			'size',
+			'opacity',
+			'show-seconds',
+			'smooth-seconds',
+			'visible',
+			'refresh-ms',
+		]) {
+			this._settingsIds.push(
+				this._settings.connect(`changed::${key}`, () => this._applySettings())
+			);
+		}
 
         this._applySettings();
     }
@@ -94,7 +104,9 @@ const ClockActor = GObject.registerClass(class ClockActor extends St.DrawingArea
             this._timerId = 0;
         }
 
-        const interval = this._settings.get_boolean('smooth-seconds') ? 50 : 250;
+        const interval = this._settings.get_boolean('smooth-seconds')
+		? this._settings.get_int('refresh-ms')
+		: 1000;
         this._timerId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, interval, () => {
             this.queue_repaint();
             return GLib.SOURCE_CONTINUE;

@@ -57,7 +57,37 @@ export default class SkinClockPreferences extends ExtensionPreferences {
             value => settings.set_double('opacity', value),
             value => `${Math.round(value * 100)} %`
         ));
+		const refreshValues = [1000, 250, 100, 50, 33];
+		const refreshLabels = [
+			'1 FPS',
+			'4 FPS',
+			'10 FPS',
+			'20 FPS',
+			'30 FPS',
+		];
 
+		const refreshModel = Gtk.StringList.new(refreshLabels);
+
+		const refreshRow = new Adw.ComboRow({
+			title: _('Refresh rate'),
+			subtitle: _('How often the clock is redrawn. Higher values use more resources.'),
+			model: refreshModel,
+		});
+
+		const currentRefresh = settings.get_int('refresh-ms');
+		let refreshIndex = refreshValues.indexOf(currentRefresh);
+
+		if (refreshIndex < 0)
+			refreshIndex = 3;
+
+		refreshRow.selected = refreshIndex;
+
+		refreshRow.connect('notify::selected', row => {
+			settings.set_int('refresh-ms', refreshValues[row.selected]);
+		});
+
+		appearance.add(refreshRow);
+		
         const secondsRow = new Adw.SwitchRow({
             title: _('Second hand'),
             subtitle: _('Show the second hand.'),
